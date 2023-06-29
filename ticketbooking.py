@@ -43,3 +43,16 @@ class TicketBookingGUI:
         else:
             self.seats[row][col] = False
             self.seat_buttons[row*10 + col]["text"] = "Available"
+
+   # Update total price
+        total_price = sum([sum(row) for row in self.seats]) * 10
+        self.total_price_label.config(text="Total price: ${}".format(total_price))
+
+    def book(self):
+        # Book the selected seats
+        # ...
+        pass
+
+root = tk.Tk()
+app = TicketBookingGUI(root)
+root.mainloop()
